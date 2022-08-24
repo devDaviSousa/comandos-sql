@@ -112,7 +112,7 @@ delete from Produtos;
 
 --------------------------------------------------------------------------
 
---junção de tabela
+--junÃ§Ã£o de tabela
 select * from Clientes cli
 inner join Pedido ped
 on cli.codigo = ped.CodigoCliente;
@@ -190,13 +190,28 @@ select id_departamento, count(id_departamento)
 from funcionarios
 group by id_departamento
 
-
-
 select departamentos.descricao, count(funcionarios.id_departamento)
 from funcionarios
 join departamentos
 on funcionarios.id_departamento = departamentos.id_dept
 group by departamentos.id_dept
+
+--JOIN, GROUP BY e COUNT JUNTOS
+
+select count(id_departamento)
+from funcionarios
+group by id_departamento
+
+select count(id_departamento)
+from funcionarios
+group by id_departamento
+
+select departamentos.descricao ,count(funcionarios.id_funcionario)
+from funcionarios
+join departamentos
+on funcionarios.id_funcionario = departamentos.id_dept
+group by funcionarios.id_funcionario
+
 
 --HAVING
 select departamentos.descricao, count(funcionarios.id_departamento)
